@@ -2,9 +2,11 @@
 
 Best all in one authentic clothing solution for you!
 
-## Live Url
+## Live Urls
 
-https://esl-shop-bangladesh.web.app/
+<b><i>Website:</b></i> https://esl-shop-bangladesh.web.app/
+<br>
+<b><i>Server:</b></i> https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/
 
 ## Key Features
 
