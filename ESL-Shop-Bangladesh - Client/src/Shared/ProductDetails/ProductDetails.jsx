@@ -35,7 +35,8 @@ const ProductDetails = () => {
             },
             body: JSON.stringify({
               userId: userId,
-              productId: productId,
+              pictureURL: pictureURL,
+              product: product,
               quantity: quantity,
             }),
           }

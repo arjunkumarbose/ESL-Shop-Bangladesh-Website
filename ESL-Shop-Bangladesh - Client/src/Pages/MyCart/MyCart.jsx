@@ -60,7 +60,8 @@ const Mycart = () => {
           Swal.fire("Error", "Item could not be removed from cart!", "error");
         } else {
           Swal.fire("Success", "Item removed from cart!", "success");
-          window.location.reload();
+          //window.location.reload();
+          setCartItems(cartItems.filter((item) => item._id !== productId));
         }
       })
       .catch((error) => {
@@ -76,7 +77,8 @@ const Mycart = () => {
           <table className="table table-compact  w-full">
             <thead>
               <tr className="text-cyan-400 text-center">
-                <th className="bg-black">Product ID</th>
+                <th className="bg-black">Product Image</th>
+                <th className="bg-black">Product Name</th>
                 <th className="bg-black">Quantity</th>
                 <th className="bg-black">Action</th>
               </tr>
@@ -91,7 +93,15 @@ const Mycart = () => {
               ) : (
                 cartItems.map((item) => (
                   <tr key={item._id}>
-                    <td>{item._id}</td>
+                    <td>
+                      <div className="avatar">
+                        <div className="w-24 rounded-full ring ring-cyan-400 ring-offset-base-100 ring-offset-2">
+                          <img src={item?.product?.pictureURL} alt="" />
+                          {/* <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" /> */}
+                        </div>
+                      </div>
+                    </td>
+                    <td>{item?.product?.name}</td>
                     <td>{item.quantity}</td> {/* Display the quantity */}
                     <td>
                       <button

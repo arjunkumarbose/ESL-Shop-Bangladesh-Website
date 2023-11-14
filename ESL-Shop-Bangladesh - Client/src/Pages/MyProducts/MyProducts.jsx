@@ -59,6 +59,7 @@ const MyProducts = () => {
             <thead>
               <tr className="text-cyan-400">
                 <th className="bg-black"></th>
+                <th className="bg-black">Product Image</th>
                 <th className="bg-black">Name</th>
                 <th className="bg-black">Added By</th>
                 <th className="bg-black">category</th>

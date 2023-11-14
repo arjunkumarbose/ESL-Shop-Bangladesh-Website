@@ -77,8 +77,15 @@ const MyProductsTable = ({
     <>
       <tr>
         <td>{i + 1}</td>
-
+        <td>
+          <div className="avatar">
+            <div className="w-24 mask mask-squircle">
+              <img src={pictureURL} />
+            </div>
+          </div>
+        </td>
         <td className="text-base font-semibold">{name}</td>
+
         <td>{addedBy} </td>
         <td>{subCategory}</td>
         <td>{price}</td>
