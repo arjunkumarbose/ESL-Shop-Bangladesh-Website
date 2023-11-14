@@ -15,9 +15,7 @@ const HomeProducts = () => {
   const [catagory, setCatagory] = useState("ESL");
 
   useEffect(() => {
-    fetch(
-      `https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/allproducts/${catagory}`
-    )
+    fetch(`https://esl-shop-bangladesh.vercel.app/allproducts/${catagory}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [catagory]);

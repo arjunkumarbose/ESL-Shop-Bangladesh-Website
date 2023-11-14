@@ -3,7 +3,6 @@ const app = express();
 const cors = require('cors');
 require('dotenv').config()
 const port = process.env.PORT || 5001;
-
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 // middleware
@@ -12,17 +11,34 @@ app.use(express.json())
 
 const uri = `mongodb+srv://${process.env.USER_DB}:${process.env.USER_PASS}@cluster0.merbl3v.mongodb.net/?retryWrites=true&w=majority`;
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
+// const client = new MongoClient(uri, {
+//   serverApi: {
+//     version: ServerApiVersion.v1,
+//     strict: true,
+//     deprecationErrors: true,
+//   }
+// });
+
+// client.connect(err => {
+//   const collection = client.db("esl-shop").collection("all-collection");
+//   console.log("Connected to database");
+//   client.close();
+// }
+// );
+
+app.get('/', (req, res) => {
+  res.send("Server Started")
+});
+
+app.listen(port, () => {
+  console.log("server Started");
 });
 
 async function run() {
   try {
+    //await client.connect();
+    //console.log("Connected to database");
+
 
     const allProductsCollection = client.db("esl-shop").collection("all-collection");
 
@@ -145,19 +161,6 @@ async function run() {
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
-    // await client.close();
+    //await client.close();
   }
 }
-
-
-app.get('/', (req, res) => {
-  res.send("Server Started")
-});
-
-app.listen(port, () => {
-  console.log("server Started");
-})
-
-// export express api
-module.exports = app
-run().catch(console.dir);

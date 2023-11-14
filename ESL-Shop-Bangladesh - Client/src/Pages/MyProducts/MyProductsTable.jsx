@@ -22,14 +22,11 @@ const MyProductsTable = ({
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (productData) => {
-    fetch(
-      `https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/updateproduct/${_id}`,
-      {
-        method: "PATCH",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(productData),
-      }
-    )
+    fetch(`https://esl-shop-bangladesh.vercel.app/updateproduct/${_id}`, {
+      method: "PATCH",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(productData),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
@@ -52,12 +49,9 @@ const MyProductsTable = ({
     }).then((result) => {
       // delete it after confermation
       if (result.isConfirmed) {
-        fetch(
-          `https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/myproducts/${_id}`,
-          {
-            method: "DELETE",
-          }
-        )
+        fetch(`https://esl-shop-bangladesh.vercel.app/myproducts/${_id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             // delete from ui instantly and show a confirmation toast

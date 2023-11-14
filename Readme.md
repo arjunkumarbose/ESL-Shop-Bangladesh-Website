@@ -6,7 +6,7 @@ Best all in one authentic clothing solution for you!
 
 <b><i>Website:</b></i> https://esl-shop-bangladesh.web.app/
 <br>
-<b><i>Server:</b></i> https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/
+<b><i>Server:</b></i> https://esl-shop-bangladesh.vercel.app/
 
 ## Key Features
 

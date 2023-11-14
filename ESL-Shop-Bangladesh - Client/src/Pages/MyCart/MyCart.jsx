@@ -11,9 +11,7 @@ const Mycart = () => {
   const [selectedProducts, setSelectedProducts] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/allproducts/all"
-    )
+    fetch("https://esl-shop-bangladesh.vercel.app/allproducts/all")
       .then((res) => res.json())
       .then((data) => setProducts(data));
 
@@ -21,7 +19,7 @@ const Mycart = () => {
       try {
         console.log(userId);
         const response = await fetch(
-          `https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/carts?userId=${userId}`
+          `https://esl-shop-bangladesh.vercel.app/carts?userId=${userId}`
         );
         if (response.status === 404) {
           console.log("User's cart is empty.");
@@ -49,7 +47,7 @@ const Mycart = () => {
 
   const removeFromCart = (productId) => {
     fetch(
-      `https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/removefromcart/${productId}`,
+      `https://esl-shop-bangladesh.vercel.app/removefromcart/${productId}`,
       {
         method: "DELETE",
       }

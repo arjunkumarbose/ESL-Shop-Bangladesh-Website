@@ -18,9 +18,7 @@ const BrandPage = () => {
 
   useEffect(() => {
     // Fetch products based on the selected category
-    fetch(
-      `https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/allproducts/${category}`
-    )
+    fetch(`https://esl-shop-bangladesh.vercel.app/allproducts/${category}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [category]);

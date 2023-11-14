@@ -27,7 +27,7 @@ const ProductDetails = () => {
     if (quantity >= 0 && quantity <= availableQuantity) {
       try {
         const response = await fetch(
-          "https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/addtocart",
+          "https://esl-shop-bangladesh.vercel.app/addtocart",
           {
             method: "POST",
             headers: {

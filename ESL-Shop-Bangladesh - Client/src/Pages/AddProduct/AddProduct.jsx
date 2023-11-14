@@ -11,14 +11,11 @@ const AddProduct = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (product) => {
-    fetch(
-      "https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/addproducts",
-      {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(product),
-      }
-    )
+    fetch("https://esl-shop-bangladesh.vercel.app/addproducts", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(product),
+    })
       .then((res) => res.json())
       .then(() => {
         Swal.fire({

@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/productdetails/${params.id}`
+            `https://esl-shop-bangladesh.vercel.app/productdetails/${params.id}`
           ),
       },
       {
@@ -97,7 +97,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/productdetails/${params.id}`
+            `https://esl-shop-bangladesh.vercel.app/productdetails/${params.id}`
           ),
       },
     ],

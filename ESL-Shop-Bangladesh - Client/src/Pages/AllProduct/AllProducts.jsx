@@ -7,7 +7,6 @@ import "aos/dist/aos.css";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { useLoaderData } from "react-router-dom";
 import { useContext } from "react";
 
 const AllProducts = () => {
@@ -20,9 +19,7 @@ const AllProducts = () => {
   const [searchText, setSearchText] = useState(" ");
 
   useEffect(() => {
-    fetch(
-      "https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/allproducts/all"
-    )
+    fetch("https://esl-shop-bangladesh.vercel.app/allproducts/all")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -45,9 +42,7 @@ const AllProducts = () => {
   };
 
   const handleSearch = () => {
-    fetch(
-      `https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/searchproducts/${searchText}`
-    )
+    fetch(`https://esl-shop-bangladesh.vercel.app/searchproducts/${searchText}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   };

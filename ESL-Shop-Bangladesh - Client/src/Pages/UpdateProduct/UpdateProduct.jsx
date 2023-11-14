@@ -16,14 +16,11 @@ const UpdateProduct = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (productData) => {
-    fetch(
-      `https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/updateproduct/${_id}`,
-      {
-        method: "PATCH",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(productData),
-      }
-    )
+    fetch(`https://esl-shop-bangladesh.vercel.app/updateproduct/${_id}`, {
+      method: "PATCH",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(productData),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {

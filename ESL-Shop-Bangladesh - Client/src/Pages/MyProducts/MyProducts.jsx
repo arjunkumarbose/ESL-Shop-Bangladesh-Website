@@ -21,7 +21,7 @@ const MyProducts = () => {
 
   useEffect(() => {
     fetch(
-      `https://b8a10-brandshop-server-side-arjunkumarbose.vercel.app/myproducts?email=${user?.email}&sort=${sortbyPrice}`
+      `https://esl-shop-bangladesh.vercel.app/myproducts?email=${user?.email}&sort=${sortbyPrice}`
     )
       .then((res) => res.json())
       .then((data) => setMyProducts(data));
